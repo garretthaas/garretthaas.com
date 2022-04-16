@@ -1,0 +1,12 @@
+---
+layout: layouts/home.njk
+---
+<img src="img/animated_pill_slow.gif" alt="home_logo" />
+{% set maxEntries = collections.entries.length | min(5) %}
+<h1>Latest {% if maxEntries == 1 %}Post{% else %}{{ maxEntries }} Entries{% endif %}</h1>
+
+{% set entrieslist = collections.entries | head(-3) %}
+{% set entrieslistCounter = collections.entries | length %}
+{% include "entrieslist.njk" %}
+
+<p>More entries can be found in <a href="{{ '/entries/' | url }}">the archive</a>.</p>

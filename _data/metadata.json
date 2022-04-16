@@ -1,0 +1,21 @@
+{
+  "title": "Garrett Haas",
+  "url": "https://garretthaas.com/",
+  "language": "en",
+  "description": "In progress...",
+  "feed": {
+    "subtitle": "In progress...",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://garretthaas.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://garretthaas.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Garrett Haas",
+    "email": "garrett@garretthaas.com",
+    "url": "https://garretthaas.com/about-me/"
+  }
+}

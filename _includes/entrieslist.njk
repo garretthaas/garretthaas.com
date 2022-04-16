@@ -1,0 +1,31 @@
+<section reversed class="entrylist" style="counter-reset: start-from {{ (entryslistCounter or entryslist.length) + 1 }}">
+{% for entry in entrieslist | reverse %}
+  <article class="entrylist-item{% if entry.url == url %} entrylist-item-active{% endif %} tAlignCenter">
+    <header>
+      <h2>
+        <a href="{{ entry.url | url }}" class="entrylist-link">
+          {% if entry.data.title %}
+            {{ entry.data.title }}
+          {% else %}
+            {{ entry.url }}
+          {% endif %}
+        </a>
+      </h2>
+    </header>
+    {% for tag in entry.data.tags | filterTagList %}
+      {% if 'Note' in tag %}
+        <main>
+          {{ content | safe }}
+        </main>
+      {% endif %}
+    {% endfor %}
+    <aside>
+      <time class="entrylist-date" datetime="{{ entry.date | htmlDateString }}">{{ entry.date | htmlDateString }}</time>
+      {% for tag in entry.data.tags | filterTagList %}
+        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="buttonSmall">{{ tag }}</a>
+      {% endfor %}
+    </aside>
+  </article>
+{% endfor %}
+</ol>

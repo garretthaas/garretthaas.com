@@ -1,0 +1,12 @@
+---
+layout: layouts/home.njk
+permalink: /entries/
+eleventyNavigation:
+  key: Entries
+  order: 1
+---
+
+<h1>Entries</h1>
+
+{% set entrieslist = collections.entries %}
+{% include "entrieslist.njk" %}
