@@ -10,7 +10,7 @@
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "serve:eleventy": "npx @11ty/eleventy --serve",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npx @11ty/eleventy --build",
+    "build": "npm-run-all build:sass --parallel build:eleventy",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
